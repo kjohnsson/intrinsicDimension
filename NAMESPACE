@@ -1,0 +1,18 @@
+export(addNoise, cornerPlane, cutHyperPlane, cutHyperSphere, hyperCube, hyperCubeFaces, hyperCubeEdges,
+       mHeinManifold, m14Manifold, m15Manifold, oblongNormal, isotropicNormal, hyperSphere, hyperBall, swissRoll,
+       swissRoll3Sph, twinPeaks, hyperTwinPeaks,
+       dancoDimEst, essDimEst, pcaLocalDimEst, pcaOtpmPointwiseDimEst, maxLikGlobalDimEst, maxLikLocalDimEst, maxLikPointwiseDimEst, knnDimEst,
+       dnoiseGaussH, dnoiseGaussB, dnoiseNcChi,
+       localIntrinsicDimension, globalIntrinsicDimension,
+       pointwiseIntrinsicDimension)
+
+S3method(print,DancoCalibrationData)
+S3method(print,DimEst)
+S3method(print,DimEstPointwise)
+
+importFrom("yaImpute", "ann")
+
+importFrom("stats", "dchisq", "dnorm", "dt", "integrate", "kmeans",
+           "optim", "pnorm", "prcomp", "qchisq", "rnorm", "runif",
+           "sd", "median")
+importFrom("utils", "combn")

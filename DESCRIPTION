@@ -1,0 +1,16 @@
+Package: intrinsicDimension
+Type: Package
+Title: Intrinsic Dimension Estimation
+Version: 1.0
+Date: 2017-06-12
+Author: Kerstin Johnsson, Lund University
+Maintainer: Kerstin Johnsson <kerstin.johnsson@hotmail.com>
+Depends:
+    yaImpute
+Description: Functions for estimating intrinsic dimension of data sets (i.e
+    the manifold or Hausdorff dimension of the support of the distribution that
+    generated the data), and functions for generating data points from (usually
+    uniform) distributions supported on manifolds (possibly with noise).
+License: MIT + file LICENSE
+LazyLoad: yes
+RoxygenNote: 5.0.1
