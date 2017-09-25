@@ -202,16 +202,3 @@ maxLikDimEstFromRIterative_inner <- function(Rs, dnoise, sigma, n, m, unbiased) 
 
 }
 
-################################################################################
-
-yaIkNN <- function(data, indexes, k) {
-  # ann returns indexes and SQUARED Euclidean distances
-  kNN.i.d <- ann(data, data[indexes, , drop = FALSE], k + 1, 
-                    verbose = FALSE)$knnIndexDist[ , -c(1, k + 2), drop = FALSE]
-  kNN.d <- sqrt(kNN.i.d[ , (k + 1):(2*k)])
-  kNN.i.d[ , (k + 1):(2*k)] <- kNN.d
-  return(kNN.i.d)
-}
-
-################################################################################
-

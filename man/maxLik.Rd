@@ -24,7 +24,7 @@ maxLikLocalDimEst(data, dnoise = NULL, sigma = 0, n = NULL,
 \arguments{
   \item{data}{data set with each row describing a data point.}
   \item{k}{the number of distances that should be used for each dimension estimation.}
-  \item{dnoise}{a function or a name of a function giving the translation density. If NULL, no noise is modeled, and the estimator turns into the Hill estimator (see References). Translation densities \code{\link{dnoiseGaussH}}, \code{\link{dnoiseGaussB}} and \code{\link{dnoiseNcChi}} are provided in the package.}
+  \item{dnoise}{a function or a name of a function giving the translation density. If NULL, no noise is modeled, and the estimator turns into the Hill estimator (see References). Translation densities \code{\link{dnoiseGaussH}} and \code{\link{dnoiseNcChi}} are provided in the package. \code{dnoiseGaussH} is an approximation of \code{dnoiseNcChi}, but faster.}
   \item{sigma}{(estimated) standard deviation of the (isotropic) noise.}
   \item{n}{dimension of the noise.}
   \item{indices}{the indices of the data points for which local dimension
@@ -63,34 +63,33 @@ Kerstin Johnsson, Lund University.
 }
 
 \examples{
-data <- hyperBall(1000, d = 7, n = 13, sd = 0.01)
-maxLikGlobalDimEst(data, 10, dnoiseGaussH, 0.01, 13)
+data <- hyperBall(100, d = 7, n = 13, sd = 0.01)
 maxLikGlobalDimEst(data, 10, dnoiseNcChi, 0.01, 13)
-maxLikGlobalDimEst(data, 10, dnoiseNcChi, 0.01, 13, neighborhood.aggregation = 'robust')
-maxLikGlobalDimEst(data, 10, dnoiseNcChi, 0.01, 13,
-        integral.approximation = 'guaranteed.convergence')
-maxLikGlobalDimEst(data, 10, dnoiseNcChi, 0.01, 13,
+maxLikGlobalDimEst(data, 10, dnoiseGaussH, 0.01, 13)
+maxLikGlobalDimEst(data, 10, dnoiseGaussH, 0.01, 13)
+maxLikGlobalDimEst(data, 10, dnoiseGaussH, 0.01, 13, neighborhood.aggregation = 'robust')
+maxLikGlobalDimEst(data, 10, dnoiseGaussH, 0.01, 13,
+        integral.approximation = 'guaranteed.convergence',
+        neighborhood.aggregation = 'robust')
+maxLikGlobalDimEst(data, 10, dnoiseGaussH, 0.01, 13,
         integral.approximation = 'iteration', unbiased = TRUE)
 
 data <- hyperBall(1000, d = 7, n = 13, sd = 0.01)
 maxLikGlobalDimEst(data, 500, dnoiseGaussH, 0.01, 13,
         neighborhood.based = FALSE)
-maxLikGlobalDimEst(data, 500, dnoiseNcChi, 0.01, 13,
-        neighborhood.based = FALSE)
-maxLikGlobalDimEst(data, 500, dnoiseNcChi, 0.01, 13,
+maxLikGlobalDimEst(data, 500, dnoiseGaussH, 0.01, 13,
         integral.approximation = 'guaranteed.convergence',
         neighborhood.based = FALSE)
-maxLikGlobalDimEst(data, 500, dnoiseNcChi, 0.01, 13,
+maxLikGlobalDimEst(data, 500, dnoiseGaussH, 0.01, 13,
         integral.approximation = 'iteration',
         neighborhood.based = FALSE)
         
 data <- hyperBall(100, d = 7, n = 13, sd = 0.01)
-maxLikPointwiseDimEst(data, 10, dnoiseGaussH, 0.01, 13, indices=1:10)
 maxLikPointwiseDimEst(data, 10, dnoiseNcChi, 0.01, 13, indices=1:10)
 
 data <- cutHyperPlane(50, d = 7, n = 13, sd = 0.01)
-maxLikLocalDimEst(data, dnoiseGaussH, 0.1, 3)
 maxLikLocalDimEst(data, dnoiseNcChi, 0.1, 3)
+maxLikLocalDimEst(data, dnoiseGaussH, 0.1, 3)
 maxLikLocalDimEst(data, dnoiseNcChi, 0.1, 3,
        integral.approximation = 'guaranteed.convergence')
 

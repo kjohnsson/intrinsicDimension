@@ -1,7 +1,6 @@
 \name{Noisefun}
 \alias{dnoiseNcChi}
 \alias{dnoiseGaussH}
-\alias{dnoiseGaussB}
 \title{ Transition Functions Describing Noise }
 \description{
   Transition functions \eqn{f(s|r)} describing the shift in lengths of vectors
@@ -11,7 +10,6 @@
 \usage{
 dnoiseNcChi(r, s, sigma, k)
 dnoiseGaussH(r, s, sigma, k)
-dnoiseGaussB(r, s, sigma, k)
 }
 \arguments{
   \item{r}{ length or vector of lengths of original vector. }
@@ -22,8 +20,7 @@ dnoiseGaussB(r, s, sigma, k)
 \details{
   \code{dnoiseNcChi} is the true transition function density when the noise
   is Gaussian, the other transition functions are approximations of this.
-  \code{dnoiseGaussH} is the Gaussian approximation used in Haro et al. and 
-  \code{dnoiseGaussB} is the best Gaussian approximation.
+  \code{dnoiseGaussH} is the Gaussian approximation used in Haro et al.
   
   If Gaussian noise is added to both endpoints of the vector, \code{sigma}
   should be replaced by 
@@ -54,10 +51,8 @@ sigma <- 0.05
 x <- seq(0, 1.5, length.out = 200)
 y <- dnoiseNcChi(x, s = .5, sigma, k = 20)
 plot(x, y, type = 'l', main = 'Noise dim = 20')
-y2 <- dnoiseGaussB(x, s = .5, sigma, k = 20)
-lines(x, y2, col = 'red')
-y3 <- dnoiseGaussH(x, s = .5, sigma, k = 20)
-lines(x, y3, lty = 2)
+y2 <- dnoiseGaussH(x, s = .5, sigma, k = 20)
+lines(x, y2, lty = 2)
 
 # Low SNR
 par(mfrow = c(2, 3))
@@ -65,20 +60,16 @@ sigma <- 0.2
 x <- seq(0, 1.5, length.out = 200)
 y <- dnoiseNcChi(x, s = .5, sigma, k = 4)
 plot(x, y, type = 'l', main = 'Noise approximations')
-y2 <- dnoiseGaussB(x, s = .5, sigma, k = 4)
-lines(x, y2, col = 'red')
-y3 <- dnoiseGaussH(x, s = .5, sigma, k)
-lines(x, y3, lty = 2)
+y2 <- dnoiseGaussH(x, s = .5, sigma, k)
+lines(x, y2, lty = 2)
 
 # High SNR, low-dim noise
 sigma <- 0.05
 x <- seq(0, 1.5, length.out = 200)
 y <- dnoiseNcChi(x, s = .5, sigma, k = 4)
 plot(x, y, type = 'l', main = 'Noise dim = 4')
-y2 <- dnoiseGaussB(x, s = .5, sigma, k = 4)
-lines(x, y2, col = 'red')
-y3 <- dnoiseGaussH(x, s = .5, sigma, k)
-lines(x, y3, lty = 2)
+y2 <- dnoiseGaussH(x, s = .5, sigma, k)
+lines(x, y2, lty = 2)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

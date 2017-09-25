@@ -16,7 +16,8 @@ pointwiseIntrinsicDimension(.data, .method, ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{.data}{ Data set for which dimension should be estimated.}
-  \item{.method}{ For \code{local.dimension.estimation}, one of \code{'essDimEst'}, 
+  \item{.method}{ For \code{local.dimension.estimation}, one of
+                 \code{'essLocalDimEst'}, 
                  \code{'dancoDimEst'}, \code{'pcaLocalDimEst'},
                  \code{'maxLikLocalDimEst'}, 
                  \code{'knnDimEst'}. For \code{global.dimension.estimation}, one of
@@ -80,13 +81,13 @@ Kerstin Johnsson, Lund University
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-\code{\link{essDimEst}}, \code{\link{dancoDimEst}}, \code{\link{pcaLocalDimEst}}, \code{\link{knnDimEst}}
+\code{\link{essLocalDimEst}}, \code{\link{dancoDimEst}}, \code{\link{pcaLocalDimEst}}, \code{\link{knnDimEst}}
 \code{\link{pcaOtpmPointwiseDimEst}}, \code{\link{maxLikGlobalDimEst}}, \code{\link{maxLikLocalDimEst}},
 \code{\link{maxLikPointwiseDimEst}}
 }
 \examples{
 data <- hyperBall(100, 4, 15, .05)
-localIntrinsicDimension(data, .method='essDimEst', ver = 's', d = 1)
+localIntrinsicDimension(data, .method='essLocalDimEst', ver = 'a', d = 1)
 globalIntrinsicDimension(data, 'dancoDimEst', k = 8, D = 20)
 pointwiseIntrinsicDimension(data, .method='maxLikPointwiseDimEst', k = 8, dnoise = NULL)
 }

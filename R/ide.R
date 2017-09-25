@@ -1,5 +1,5 @@
 localIntrinsicDimension <- function(.data, .method, ...) {
-  IDEs <- c('essDimEst', 'dancoDimEst', 'pcaLocalDimEst', 'maxLikLocalDimEst', 'kNN')
+  IDEs <- c('essLocalDimEst', 'dancoDimEst', 'pcaLocalDimEst', 'maxLikLocalDimEst', 'kNN')
   if (!(.method %in% IDEs)) {
     stop(paste(.method, 'not local intrinsic dimension estimator. Should be one of',
                paste(IDEs, collapse=',')))

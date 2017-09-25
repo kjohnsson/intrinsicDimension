@@ -2,26 +2,26 @@
 # Functions:
 #
 #   computeEss
-#   essDimEst
+#   essLocalDimEst
 #   essReference
 #   vnball
 #   vnsphere
 #
 ################################################################################
 
-essDimEst <- function(data, ver, d = 1) {
+essLocalDimEst <- function(data, ver = 'a', d = 1) {
   essval <- computeEss(data, verbose = FALSE, ver, d)
   if (is.na(essval)) return(c(de = NA, ess = NA))
   mindim <- 1
   maxdim <- 20
   dimvals <- essReference(ver, d, maxdim, mindim)
-  while ((ver == 's' && essval > dimvals[maxdim]) ||
-      (ver == 'c' && essval < dimvals[maxdim])) {
+  while ((ver == 'a' && essval > dimvals[maxdim]) ||
+      (ver == 'b' && essval < dimvals[maxdim])) {
     mindim <- maxdim + 1
     maxdim <- 2*(maxdim-1)
     dimvals <- c(dimvals, essReference(ver, d, maxdim, mindim))
   }
-  if (ver == 's') {
+  if (ver == 'a') {
     i <- findInterval(essval, dimvals[mindim:maxdim])
   } else {
     i <- length(maxdim:mindim) - findInterval(essval, dimvals[maxdim:mindim])
@@ -40,8 +40,8 @@ computeEss <- function(data, verbose = FALSE, ver, d = 1) {
 
   n <- dim(data)[2]
   if (p > n) {
-    if (ver == 's') return(0)
-    if (ver == 'c') return(1)
+    if (ver == 'a') return(0)
+    if (ver == 'b') return(1)
     stop('Not a valid version')
   }
   
@@ -59,18 +59,18 @@ computeEss <- function(data, verbose = FALSE, ver, d = 1) {
   
   # Compute weights for each simple element
   weight <- sapply(Alist, function(vecgr) { prod(lens(vecgr)) } )
-  if (ver == 's') {
+  if (ver == 'a') {
     # Compute the volumes of the simple elements
     vol <- sapply(Alist, function(vecgr) { sqrt(det(vecgr %*% t(vecgr))) } )
     return(sum(vol)/sum(weight))
   }
-  if (ver == 'c') {
+  if (ver == 'b') {
     if (d == 1) {
       # Compute the projection of one vector onto one other
       proj <- sapply(Alist, function(vecgr) { abs(sum(vecgr[1, ] * vecgr[2, ])) } )
       return(sum(proj)/sum(weight))
     }
-    stop('For ver == "c", d > 1 is not supported.')
+    stop('For ver == "b", d > 1 is not supported.')
   }
   stop('Not a valid version')
 }
@@ -79,7 +79,7 @@ computeEss <- function(data, verbose = FALSE, ver, d = 1) {
 
 essReference <- function(ver, d, maxdim, mindim=1) {
   
-  if (ver == 's') {
+  if (ver == 'a') {
     if (d == 1) {
       n <- max(mindim, 2):maxdim
       dim.val <- gamma(n/2)^2/(gamma((n-1)/2)*gamma((n+1)/2))
@@ -92,12 +92,12 @@ essReference <- function(ver, d, maxdim, mindim=1) {
     }
     return(dim.val)
   } 
-  if (ver == 'c') {
+  if (ver == 'b') {
     if (d == 1) {
       n <- mindim:maxdim
       return(2*vnball(n-1)/vnsphere(n-1))
     }
-    stop('For ver == "c", d > 1 is not supported.')
+    stop('For ver == "b", d > 1 is not supported.')
   }
   stop('Not a valid version')
 

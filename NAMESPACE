@@ -1,10 +1,11 @@
 export(addNoise, cornerPlane, cutHyperPlane, cutHyperSphere, hyperCube, hyperCubeFaces, hyperCubeEdges,
        mHeinManifold, m14Manifold, m15Manifold, oblongNormal, isotropicNormal, hyperSphere, hyperBall, swissRoll,
        swissRoll3Sph, twinPeaks, hyperTwinPeaks,
-       dancoDimEst, essDimEst, pcaLocalDimEst, pcaOtpmPointwiseDimEst, maxLikGlobalDimEst, maxLikLocalDimEst, maxLikPointwiseDimEst, knnDimEst,
-       dnoiseGaussH, dnoiseGaussB, dnoiseNcChi,
+       dancoDimEst, essLocalDimEst, pcaLocalDimEst, pcaOtpmPointwiseDimEst, maxLikGlobalDimEst, maxLikLocalDimEst, maxLikPointwiseDimEst, knnDimEst,
+       dnoiseGaussH, dnoiseNcChi,
        localIntrinsicDimension, globalIntrinsicDimension,
-       pointwiseIntrinsicDimension)
+       pointwiseIntrinsicDimension,
+       asPointwiseEstimator, neighborhoods)
 
 S3method(print,DancoCalibrationData)
 S3method(print,DimEst)
