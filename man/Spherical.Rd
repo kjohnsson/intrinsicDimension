@@ -22,7 +22,7 @@ isotropicNormal(Ns, d, n = d, sd = 0)
   \item{sd}{ standard deviation of noise. }
 }
 \details{
-  \code{hyperBall} draws a sample from a uniform distribution on a hyperball of 
+  \code{hyperBall} draws a sample from a uniform distribution on a hyper ball of 
   radius 1.
   \code{hyperSphere} draws a sample from a uniform distribution on a hypersphere
   of radius 1.

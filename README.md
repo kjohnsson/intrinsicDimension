@@ -12,8 +12,7 @@ Kerstin Johnsson (2016). Structures in high-dimensional data: Intrinsic dimensio
 
 ## Installation
 ```
-library(devtools)
-install_github("kjohnsson/intrinsicDimension")
+install.packages("intrinsicDimension")
 ```
 The package can be called from Python using the Python package rpy2.
 

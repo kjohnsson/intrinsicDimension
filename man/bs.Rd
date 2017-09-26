@@ -1,10 +1,10 @@
 \name{pcaOtpmPointwiseDimEst}
 \alias{pcaOtpmPointwiseDimEst}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{ Dimension Estimation With Optimally Topology Perserving Maps }
+\title{ Dimension Estimation With Optimally Topology Preserving Maps }
 \description{
-  Intrinsic dimension estimation with the metod proposed in Bruske and Sommer
-  (1998). A graph called optimally topology perserving map (OTPM) is constructed
+  Intrinsic dimension estimation with the method proposed in Bruske and Sommer
+  (1998). A graph called optimally topology preserving map (OTPM) is constructed
   and on this local PCA is made with the Fukunaga-Olsen criterion to determine
   which eigenvalues that are significant.
 }
@@ -17,13 +17,13 @@
 }
 
 \value{
-A \code{DimEstPointwise} object, inhereting \code{data.frame}, with two columns:
+A \code{DimEstPointwise} object, inheriting \code{data.frame}, with two columns:
 \item{dim.est }{The dimension estimate at each point.}
-\item{nbr.nb}{The number of neighbouring nodes used for the dimension estimate at each point.}
+\item{nbr.nb}{The number of neighboring nodes used for the dimension estimate at each point.}
 }
 \references{
   Bruske, J. and Sommer, G. (1998) Intrinsic dimensionality estimation with
-  optimally topology perserving maps. \emph{IEEE Trans. on Pattern Anal. and Mach.
+  optimally topology preserving maps. \emph{IEEE Trans. on Pattern Anal. and Mach.
   Intell.}, \bold{20}(5), 572-575.
 }
 \author{

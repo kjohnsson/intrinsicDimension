@@ -29,11 +29,11 @@ pointwiseIntrinsicDimension(.data, .method, ...)
 \value{
   For \code{localIntrinsicDimension} and \code{globalIntrinsicDimension}, a \code{DimEst} object with the slot \code{dim.est} containing the dimension estimate and possibly additional slots containing additional information about the estimation process.
 %  
-  For \code{pointwiseIntrinsicDimension}, a \code{DimEstPointwise} object, inhereting \code{data.frame}, with one slot \code{dim.est} containing the dimension estimates and possibly additional slots containing additional information about the estimation process.
+  For \code{pointwiseIntrinsicDimension}, a \code{DimEstPointwise} object, inheriting \code{data.frame}, with one slot \code{dim.est} containing the dimension estimates and possibly additional slots containing additional information about the estimation process.
 }
 \details{
   For the \code{localIntrinsicDimension} function, \code{.data} should be a
-  local data set, i.e. a piece of a data set that is well approxiated by a
+  local data set, i.e. a piece of a data set that is well approximated by a
   hyperplane (meaning that the curvature should be low in the local data set).
 
   The function \code{pointwiseIntrinsicDimension} estimates local dimension
@@ -59,7 +59,7 @@ Fan, M. et al. (2010). Intrinsic dimension estimation of data by principal compo
   analysis. \emph{arXiv preprint} 1002.2050.
 
 Bruske, J. and Sommer, G. (1998) Intrinsic dimensionality estimation with
-  optimally topology perserving maps. \emph{IEEE Trans. on Pattern Anal. and Mach.
+  optimally topology preserving maps. \emph{IEEE Trans. on Pattern Anal. and Mach.
   Intell.}, \bold{20}(5), 572-575.
 
 Haro, G., Randall, G. and Sapiro, G. (2008) Translated Poisson Mixture Model

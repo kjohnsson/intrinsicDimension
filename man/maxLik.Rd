@@ -41,13 +41,13 @@ The estimators are based on the referenced paper by Haro et al. (2008), using th
 
   With \code{integral.approximation = 'Haro'} the Taylor expansion approximation of \code{r^(m-1)} that Haro et al. (2008) used are employed. With \code{integral.approximation = 'guaranteed.convergence'}, \code{r} is factored out and kept and \code{r^(m-2)} is approximated with the corresponding Taylor expansion. This guarantees convergence of the integrals. Divergence might be an issue when the noise is not sufficiently small in comparison to the smallest distances. With \code{integral.approximation = 'iteration'}, five iterations is used to determine \code{m}. 
   
-  \code{maxLikLocalDimEst} assumes that the data set is local i.e. a piece of a data set cut out by a sphere with a radius such that the data set is well approxiated by a hyperplane (meaning that the curvature should be low in the local data set). See \code{\link{localIntrinsicDimension}}.
+  \code{maxLikLocalDimEst} assumes that the data set is local i.e. a piece of a data set cut out by a sphere with a radius such that the data set is well approximated by a hyperplane (meaning that the curvature should be low in the local data set). See \code{\link{localIntrinsicDimension}}.
 }
 \value{
 For \code{maxLikGlobalDimEst} and \code{maxLikLocalDimEst}, a \code{DimEst} object with one slot:
   \item{dim.est}{ the dimension estimate}
 %
-For \code{maxLikPointwiseDimEst}, a \code{DimEstPointwise} object, inhereting \code{data.frame}, with one slot:
+For \code{maxLikPointwiseDimEst}, a \code{DimEstPointwise} object, inheriting \code{data.frame}, with one slot:
   \item{dim.est}{ the dimension estimate for each data point. Row \code{i} has the local dimension estimate at point \code{data[indices[i], ]}.}
 }
 \references{
