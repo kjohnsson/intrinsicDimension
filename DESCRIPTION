@@ -1,7 +1,7 @@
 Package: intrinsicDimension
 Type: Package
 Title: Intrinsic Dimension Estimation
-Version: 1.1
+Version: 1.1.0
 Date: 2017-10-28
 Author: Kerstin Johnsson, Lund University
 Maintainer: Kerstin Johnsson <kerstin.johnsson@hotmail.com>
