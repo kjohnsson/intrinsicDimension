@@ -125,7 +125,7 @@ Fan, M. et al. (2010). Intrinsic dimension estimation of data by principal compo
   analysis. _arXiv preprint_ 1002.2050.
 
 Bruske, J. and Sommer, G. (1998) Intrinsic dimensionality estimation with
-  optimally topology perserving maps. _IEEE Trans. on Pattern Anal. and Mach.
+  optimally topology preserving maps. _IEEE Trans. on Pattern Anal. and Mach.
   Intell._, __20__(5), 572-575.
 
 Haro, G., Randall, G. and Sapiro, G. (2008) Translated Poisson Mixture Model
