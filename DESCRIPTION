@@ -7,20 +7,7 @@ Author: Kerstin Johnsson, Lund University
 Maintainer: Kerstin Johnsson <kerstin.johnsson@hotmail.com>
 Depends:
     yaImpute
-Description: Functions for estimating intrinsic dimension of data sets (i.e the manifold or Hausdorff dimension of the support of the distribution that generated the data), and functions for generating data points from (usually uniform) distributions supported on manifolds (possibly with noise).
-    Johnsson, K. (2016, ISBN:978-91-7623-921-6)
-    Johnsson, K., Soneson, C. and Fontes, M. (2015) <doi:10.1109/TPAMI.2014.2343220>
-    Ceruti, C. et al. (2012) <arXiv:1206.3881>
-    Rozza, A et al. (2012) <doi:10.1007/s10994-012-5294-7>
-    Fukunaga, K. and Olsen, D. R. (1971) <doi:10.1109/T-C.1971.223208>
-    Fan, M. et al. (2010) <arXiv:1002.2050>
-    Bruske, J. and Sommer, G. (1998) <doi:10.1109/34.682189>
-    Haro, G., Randall, G. and Sapiro, G. (2008) <doi:10.1007/s11263-008-0144-6>
-    Hill, B. M. (1975) <doi:10.1214/aos/1176343247>
-    Levina, E. and Bickel., P. J. (2005, ISBN:9780262195348)
-    Carter, K.M., Raich, R. and Hero, A.O. (2010) <doi:10.1109/TSP.2009.2031722>
-    Hein, M. and Audibert, J-Y. (2005) <doi:10.1145/1102351.1102388>
-    Rozza, A. et al. (2012) <doi:10.1007/s10994-012-5294-7>
+Description: A variety of methods for estimating intrinsic dimension of data sets (i.e the manifold or Hausdorff dimension of the support of the distribution that generated the data) as reviewed in Johnsson, K. (2016, ISBN:978-91-7623-921-6) and Johnsson, K., Soneson, C. and Fontes, M. (2015) <doi:10.1109/TPAMI.2014.2343220>. Furthermore, to evaluate the performance of these estimators, functions for generating data sets with given intrinsic dimensions are provided.
 License: MIT + file LICENSE
 LazyLoad: yes
 RoxygenNote: 6.0.1
