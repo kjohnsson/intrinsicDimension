@@ -6,7 +6,7 @@ output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Overview of intrinsicDimension package}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
 ---
 
 The intrinsic dimension of a data set is a measure of its complexity. Data sets that can be accurately described with a few parameters have low intrinsic dimension. It is expected that the performance of many machine learning algorithms is dependent on the intrinsic dimension of the data. Is has also been proposed to use estimates of intrinsic dimension for applications such as network anomaly detection and image analysis.

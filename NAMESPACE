@@ -3,6 +3,7 @@ export(addNoise, cornerPlane, cutHyperPlane, cutHyperSphere, hyperCube, hyperCub
        swissRoll3Sph, twinPeaks, hyperTwinPeaks,
        dancoDimEst, essLocalDimEst, pcaLocalDimEst, pcaOtpmPointwiseDimEst, maxLikGlobalDimEst, maxLikLocalDimEst, maxLikPointwiseDimEst, knnDimEst,
        dnoiseGaussH, dnoiseNcChi,
+       essReference,
        localIntrinsicDimension, globalIntrinsicDimension,
        pointwiseIntrinsicDimension,
        asPointwiseEstimator, neighborhoods)
